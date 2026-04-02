@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #0e0f11;
+  --surface: #16181c;
+  --surface2: #1e2128;
+  --border: #2a2d35;
+  --accent: #c8f04f;
+  --accent-dim: #a8cc3a;
+  --text: #f0f0ee;
+  --muted: #7a7f8e;
+  --danger: #ff5a5a;
+  --success: #4fcf8f;
+  --pending: #f0a04f;
+  --radius: 12px;
+  --font-head: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+input, textarea, select {
+  width: 100%;
+  background: var(--surface2);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 14px;
+  padding: 10px 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: var(--accent);
+}
+select option { background: var(--surface2); }
+
+button {
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.18s;
+}
+
+a { text-decoration: none; color: inherit; }
+
+.btn-primary {
+  background: var(--accent);
+  color: #0e0f11;
+  padding: 11px 24px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.btn-primary:hover { background: var(--accent-dim); transform: translateY(-1px); }
+
+.btn-ghost {
+  background: transparent;
+  border: 1.5px solid var(--border);
+  color: var(--text);
+  padding: 9px 20px;
+  font-size: 14px;
+}
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+.btn-danger {
+  background: transparent;
+  border: 1.5px solid var(--danger);
+  color: var(--danger);
+  padding: 7px 16px;
+  font-size: 13px;
+}
+.btn-danger:hover { background: var(--danger); color: white; }
+
+.btn-success {
+  background: transparent;
+  border: 1.5px solid var(--success);
+  color: var(--success);
+  padding: 7px 16px;
+  font-size: 13px;
+}
+.btn-success:hover { background: var(--success); color: #0e0f11; }
+
+.error-msg {
+  background: rgba(255,90,90,0.1);
+  border: 1px solid rgba(255,90,90,0.3);
+  color: var(--danger);
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.success-msg {
+  background: rgba(79,207,143,0.1);
+  border: 1px solid rgba(79,207,143,0.3);
+  color: var(--success);
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.badge-pending { background: rgba(240,160,79,0.15); color: var(--pending); }
+.badge-approved { background: rgba(79,207,143,0.15); color: var(--success); }
+
+.badge-rejected { background: rgba(255,90,90,0.15); color: var(--danger); }
+
+.listing-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.listing-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.star-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.star-card:hover {
+  border-color: #f0d050;
+  transform: translateY(-2px);
+}
+
+.slot-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.slot-1 { background: rgba(240,208,80,0.15); color: #f0d050; border: 1px solid rgba(240,208,80,0.3); }
+.slot-2 { background: rgba(200,240,79,0.15); color: var(--accent); border: 1px solid rgba(200,240,79,0.3); }

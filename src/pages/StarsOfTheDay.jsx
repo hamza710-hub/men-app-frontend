@@ -6,7 +6,7 @@ export default function StarsOfTheDay() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('${import.meta.env.VITE_API_URL}/api/stars')
+    axios.get(`${import.meta.env.VITE_API_URL}/api/stars`)
       .then(res => setStars(res.data))
       .catch(() => {})
       .finally(() => setLoading(false));

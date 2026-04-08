@@ -28,7 +28,7 @@ export default function Login() {
 
     setLoading(true);
     try {
-      const res = await axios.post('${import.meta.env.VITE_API_URL}/api/auth/login', form);
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/login`, form);
       login(res.data.user);
       navigate(res.data.user.role === 'admin' ? '/admin' : '/dashboard');
     } catch (err) {

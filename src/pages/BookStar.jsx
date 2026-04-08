@@ -18,7 +18,7 @@ export default function BookStar() {
   useEffect(() => {
     Promise.all([
       axios.get(`${import.meta.env.VITE_API_URL}/api/listings?userId=${user._id}`),
-      axios.get('${import.meta.env.VITE_API_URL}/api/stars/booked-dates'),
+      axios.get(`${import.meta.env.VITE_API_URL}/api/stars/booked-dates`),
     ]).then(([listingsRes, bookedRes]) => {
       const approved = listingsRes.data.filter(l => l.status === 'approved');
       setApprovedListings(approved);

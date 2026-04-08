@@ -67,7 +67,7 @@ export default function BookStar() {
 
     setLoading(true);
     try {
-      await axios.post('${import.meta.env.VITE_API_URL}/api/stars', {
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/stars`, {
         userId: user._id,
         listingId: form.listingId,
         slot: Number(form.slot),

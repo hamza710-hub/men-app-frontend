@@ -8,7 +8,7 @@ export default function PublicListings() {
   const [industryFilter, setIndustryFilter] = useState('');
 
   useEffect(() => {
-    axios.get('${import.meta.env.VITE_API_URL}/api/listings/approved')
+    axios.get(`${import.meta.env.VITE_API_URL}/api/listings/approved`)
       .then(res => setListings(res.data))
       .catch(() => {})
       .finally(() => setLoading(false));

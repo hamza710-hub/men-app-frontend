@@ -71,7 +71,7 @@ const [form, setForm] = useState({ businessName: '', bio: '', industry: '', addr
 
     setLoading(true);
     try {
-      await axios.post('${import.meta.env.VITE_API_URL}/api/listings', { ...form, userId: user._id });
+      await axios.post('${import.meta.env.VITE_API_URL}/api/listings`, { ...form, userId: user._id });
       navigate('/dashboard');
     } catch (err) {
       setError(err.response?.data?.message || 'Failed to create listing.');

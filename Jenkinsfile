@@ -2,8 +2,14 @@ pipeline {
     agent any
     stages {
         stage('Build Frontend') {
+
+            environment {
+        // This pulls the secret you just created into a variable
+        VITE_API_URL = credentials('VITE_API_URL')
+    }
+            
             steps {
-                sh 'docker build -t men-frontend-builder .'
+                sh "docker build --build-arg VITE_API_URL=${VITE_API_URL} -t men-frontend-builder ."
             }
         }
         stage('Extract to Nginx Path') {
